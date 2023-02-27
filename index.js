@@ -64,6 +64,17 @@ const promptUser = () =>
       message: "List the features of your project (separated by commas)",
     },
     {
+      type: "checkbox",
+      name: "license",
+      message: "Please choose a license",
+      choices: [
+        "Creative Commons license family",
+        "MIT",
+        "Mozilla Public License 2.0",
+        "The Unlicense",
+      ],
+    },
+    {
       type: "input",
       name: "contributions",
       message: "How can developers contribute to your project?",
@@ -99,15 +110,17 @@ ${answers.lessons}
 
 ## Table of Contents
 
-Description
-Table of Contents
-Installation
-Usage
-Credits
-License
-How o contribute
-Tests
-Questions
+* [Description](#description)
+* [Table of Contents](#table-of-contents)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [Badges](#badges)
+* [Features](#features)
+* [License](#license)
+* [How to contribute](#how-to-contribute)
+* [Tests](#tests)
+* [Questions](#questions)
 
 ## Installation
 
@@ -129,6 +142,10 @@ ${answers.badges}
 
 ${answers.features}
 
+## License
+
+This application is covered under the ${answers.license} license.
+
 ## How to Contribute
 
 ${answers.contributions}
@@ -139,19 +156,10 @@ ${answers.tests}
 
 ## Questions
 
-${answers.github}
-${answers.email}`;
+Connect with me on GitHub: [${answers.github}](https://github.com/${answers.github})
+Or send me an email: <${answers.email}>`;
 
 promptUser()
   .then((answers) => writeFileAsync("README.md", generateMd(answers)))
   .then(() => console.log("Successfully wrote to README.md"))
   .catch((err) => console.error(err));
-
-// // function to write README file
-// function writeToFile(`${answers.title}`, answers) {}
-
-// // function to initialize program
-// function init() {}
-
-// // function call to initialize program
-// init();
