@@ -36,15 +36,15 @@ const promptUser = () =>
     },
     {
       type: "input",
-      name: "usage",
-      message:
-        "How is the application used? (include instructions and examples for use)",
-    },
-    {
-      type: "input",
       name: "steps",
       message:
         "What are the steps required to install your project? (Step-by-step instruction)",
+    },
+    {
+      type: "input",
+      name: "usage",
+      message:
+        "How is the application used? (include instructions and examples for use)",
     },
     {
       type: "input",
@@ -55,8 +55,7 @@ const promptUser = () =>
     {
       type: "input",
       name: "badges",
-      message:
-        "Include SimpleIcon logos? (Copy and paste your preferred logo(s) from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)",
+      message: "Include SimpleIcon logos?",
     },
     {
       type: "input",
